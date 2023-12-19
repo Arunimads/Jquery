@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="./jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="./bootstrap.bundle.min.js"></script>
+  
+</head>
+
+<body>
+    <div class="btn-group m-1">
+    <button class="btn btn-danger" id="btn-hide">hide</button>
+    <button class="btn btn-danger" id="btn-show">show</button>
+    <button class="btn btn-danger" id="btn-toggle">toggle</button>
+    <button class="btn btn-primary" id="btn-slideup">slideup</button>
+    <button class="btn btn-primary"id="btn-slidedown">slidedown</button>
+    <button class="btn btn-primary" id="btn-slidetoggle">slidetoggle</button>
+    <button class="btn btn-warning" id="btn-fadein">fadein</button>
+    <button class="btn btn-warning" id="btn-fadeout">fadeout</button>
+    <button class="btn btn-warning" id="btn-fadeto">fadeto</button>
+    <button class="btn btn-warning" id="btn-fadetoggle">fadetoggle</button>
+</div>
+<input type="text" class="form-control w-25 border-danger">
+    
+    <span id="msg" class="d-none">Input focus</span>
+
+
+    <p class="demo p-5 text-bg-danger rounded shadow mt-5" style="height: 600px;"></p>
+    <script>
+        //syntax  
+        // $(document).ready(function () {
+        //     // event syntax  selector.event(callback)
+        //     $('#btn-hide').click(function () {
+        //         //action selector.action(time,callback)
+        //         $(".demo").hide(1000, function () {
+        //             alert("now hidden");
+        //         });
+
+        //     });
+
+        //     $('#btn-show').click(function () {
+
+        //         $(".demo").show(1000, function () {
+        //             alert("now visible");
+        //         });
+        //     });
+        //     $('#btn-toggle').click(function(){
+        //         $(".demo").toggle(1500);
+        //     })
+        // });
+
+
+
+        // instead function use arrow function
+        $(document).ready(function () {
+        
+            $('#btn-hide').click(() => {
+                
+                $(".demo").hide(1000, () => {
+                    alert("now hidden")
+                });
+
+            });
+
+            $('#btn-show').click(() => {
+
+                $(".demo").show(1000, () => {
+                    alert("now visible")
+                });
+            });
+            $('#btn-toggle').click(() => {
+                $(".demo").toggle(1500);
+            })
+              //
+            $('#btn-slideup').click(() => {
+                
+                $(".demo").slideUp(1000);
+
+            });
+            $('#btn-slidedown').click(() => {
+                
+                $(".demo").slideDown(1000);
+
+            });
+            $('#btn-slidetoggle').click(() => {
+                
+                $(".demo").slideToggle(1000);
+
+            });
+            $('#btn-fadein').click(() => {
+                
+                $(".demo").fadeIn(1000);
+
+            });
+            $('#btn-fadeout').dblclick(() => {
+                
+                $(".demo").fadeOut(1000);
+
+            });
+            $('#btn-fadeto').click(() => {
+                
+                $(".demo").fadeTo(1000);
+
+            });
+            $('#btn-fadetoggle').click(() => {
+                
+                $(".demo").fadeToggle(1000);
+
+            });
+
+            var count=0;
+            $('input').keypress(()=>{
+                $('#msg').removeClass("d-none");
+                count++;
+                $('#msg').html(count);
+
+            })
+
+
+
+
+
+
+        });
+       
+        $(document).ready(function (){
+            $('input')
+        })
+
+
+
+    // jquery effects
+    ///   1. HIDE AND SHOW
+    //    2. SLIDE UP / SLIDE DOWN
+    //    3. FADE  
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
